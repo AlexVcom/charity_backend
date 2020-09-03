@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class InstitutionController {
 
-    private final InstitutionServes institutionServes;
+    private final InstitutionService institutionServes;
     private final ObjectMapper objectMapper;
 
     @GetMapping("/institution")
