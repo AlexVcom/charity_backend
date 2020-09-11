@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class InstitutionService {
 
-    private final InstitutionRepo institutionRepo;
+    private final InstitutionRepository institutionRepo;
     private final ModelMapper modelMapper;
 
 
