@@ -1,6 +1,7 @@
 package pl.coderslab.charity.donation;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
 
@@ -30,10 +31,16 @@ public class Donation {
     private String street;
     private String city;
     private String zipCode;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate pickupDate;
     private LocalTime pickupTime;
     private String pickUpComment;
 
+//    @Embeddable (w samym objekcie)
+//    private DelivInfo
+//    telefon
+//    note
 
 
     /**
