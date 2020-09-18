@@ -1,5 +1,4 @@
-package pl.coderslab.charity.institution;
-
+package pl.coderslab.charity.category;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -14,18 +13,16 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class InstitutionService {
+public class CategoryService {
 
-    private final InstitutionRepository institutionRepo;
+    private final CategoryRepository categoryRepository;
     private final ModelMapper modelMapper;
 
-
-    public List<InstitutionDto> findAllInstitution (){
-        return institutionRepo.findAll()
+    public List<CategoryDto> findAllCategory(){
+        return categoryRepository.findAll()
                 .stream()
-                .map(i -> modelMapper.map(i, InstitutionDto.class ))
+                .map(i -> modelMapper.map(i, CategoryDto.class ))
                 .collect(Collectors.toList());
     }
-
 
 }

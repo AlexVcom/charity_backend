@@ -1,4 +1,4 @@
-package pl.coderslab.charity.institution;
+package pl.coderslab.charity.category;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,14 +14,14 @@ import java.util.List;
 @RequestMapping("/api")
 @RestController
 @RequiredArgsConstructor
-public class InstitutionController {
+public class CategoryController {
 
-    private final InstitutionService institutionServes;
+    private final CategoryService categoryService;
 
     @CrossOrigin
-    @GetMapping("/institution")
-    public ResponseEntity<List<InstitutionDto>> getAllInst() {
-        List<InstitutionDto> institution = institutionServes.findAllInstitution();
-        return ResponseEntity.ok(institution);
+    @GetMapping("/category")
+    public ResponseEntity <List<CategoryDto>> getAllCategory()  {
+        List<CategoryDto> category = categoryService.findAllCategory();
+        return ResponseEntity.ok(category);
     }
 }

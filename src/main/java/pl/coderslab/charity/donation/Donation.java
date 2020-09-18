@@ -1,6 +1,9 @@
 package pl.coderslab.charity.donation;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
@@ -14,6 +17,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Donation {
 
     @Id
@@ -32,7 +38,6 @@ public class Donation {
     private String city;
     private String zipCode;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate pickupDate;
     private LocalTime pickupTime;
     private String pickUpComment;
@@ -42,19 +47,4 @@ public class Donation {
 //    telefon
 //    note
 
-
-    /**
-     *   ------- liqubase -> dodać + pom +
-     * - id
-     * - quantity (liczba worków) (Integer)
-     * - categories (lista obiektów typu `Category`), pamiętaj o odpowiedniej adnotacji
-     * - institution (obiekt typu `Institution`), pamiętaj o odpowiedniej adnotacji.
-     * - street (String)
-     * - city (String)
-     * - zipCode (String)
-     * - pickUpDate (LocalDate)
-     * - pickUpTime (LocalTime)
-     * - pickUpComment (String)
-     *
-     * */
 }
